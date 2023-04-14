@@ -1,4 +1,5 @@
-FROM python:3.9
+# syntax=docker/dockerfile:1
+FROM python:3.11.2-alpine
 
 # python
 ENV PYTHONUNBUFFERED=1 \
@@ -29,4 +30,4 @@ RUN pip install -e /src
 COPY tests/ /tests/
 
 WORKDIR /src
-CMD python main.py
+CMD python movie_fetcher.py
